@@ -1,7 +1,0 @@
-{
-  "buildCommand": "cd advantage-landing && npm run build",
-  "devCommand": "cd advantage-landing && npm run dev",
-  "installCommand": "cd advantage-landing && npm install",
-  "framework": "nextjs",
-  "outputDirectory": "advantage-landing/.next"
-}
