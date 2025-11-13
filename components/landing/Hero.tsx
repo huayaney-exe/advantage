@@ -18,20 +18,6 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-midnight-600 via-midnight-700 to-midnight-900">
-      {/* Background Video */}
-      <div className="absolute inset-0 opacity-20">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/videos/advantagehero.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-midnight-900 via-midnight-900/50 to-transparent z-10" />
-      </div>
-
       {/* Floating Badge */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -132,15 +118,19 @@ export function Hero() {
             className="relative hidden lg:block"
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-              {/* Placeholder for student working image */}
-              <div className="absolute inset-0 bg-gradient-to-br from-coral-500/20 to-emerald-500/20 backdrop-blur-3xl" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-white/40 text-center">
-                  <div className="text-6xl mb-4">🚀</div>
-                  <div className="text-xl font-semibold">Student Success Story</div>
-                  <div className="text-sm mt-2">Video/Image Placeholder</div>
-                </div>
-              </div>
+              {/* Video Background */}
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/videos/advantagehero.mp4" type="video/mp4" />
+              </video>
+
+              {/* Subtle gradient overlay for floating card visibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-midnight-900/40 via-transparent to-transparent pointer-events-none" />
 
               {/* Floating Achievement Cards */}
               <div className="absolute top-8 right-8 bg-white rounded-lg p-4 shadow-xl animate-float">
