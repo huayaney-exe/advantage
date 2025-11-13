@@ -8,100 +8,85 @@ export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-rotate every 5 seconds
   useEffect(() => {
     if (isPaused) return;
-
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % demoTestimonials.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, [isPaused]);
 
   const currentTestimonial = demoTestimonials[currentIndex];
 
   return (
-    <section className="py-24 bg-gray-900" id="testimonios">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-black" id="testimonios">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Lo que dicen nuestros{" "}
-            <span className="text-advantage-gold">estudiantes</span>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            Historias de <span className="text-[#F59E0B]">transformación</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Resultados reales de jóvenes que completaron el programa
+          <p className="text-xl text-gray-400">
+            Resultados reales de estudiantes que completaron el programa
           </p>
         </div>
 
-        {/* Testimonial Carousel */}
         <div
           className="max-w-4xl mx-auto"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="relative min-h-[300px] flex items-center justify-center">
+          <div className="relative min-h-[280px] flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="glass rounded-2xl p-8 md:p-12"
+                className="bg-white/5 border border-white/10 rounded-2xl p-10 text-center"
               >
                 {/* Stars */}
                 <div className="flex justify-center gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-2xl text-advantage-gold">
+                    <span key={i} className="text-[#F59E0B] text-xl">
                       ★
                     </span>
                   ))}
                 </div>
 
                 {/* Quote */}
-                <blockquote className="text-xl md:text-2xl text-gray-200 text-center mb-8 leading-relaxed">
+                <blockquote className="text-xl text-gray-200 mb-8 leading-relaxed">
                   "{currentTestimonial.quote}"
                 </blockquote>
 
                 {/* Author */}
                 <div className="flex items-center justify-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-advantage-gold flex items-center justify-center text-prisma-black font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-[#F59E0B] flex items-center justify-center text-black font-bold text-lg">
                     {currentTestimonial.name.charAt(0)}
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-lg">
-                      {currentTestimonial.name}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      {currentTestimonial.program}
-                    </p>
+                    <p className="font-semibold">{currentTestimonial.name}</p>
+                    <p className="text-sm text-gray-500">Estudiante ADVANTAGE</p>
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
 
-          {/* Dots Navigation */}
+          {/* Dots */}
           <div className="flex justify-center gap-2 mt-8">
             {demoTestimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`h-2 rounded-full transition-all ${
                   index === currentIndex
-                    ? "bg-advantage-gold w-8"
-                    : "bg-gray-700 hover:bg-gray-600"
+                    ? "w-8 bg-[#F59E0B]"
+                    : "w-2 bg-white/20 hover:bg-white/30"
                 }`}
-                aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
           </div>
-
-          {/* Counter */}
-          <p className="text-center text-gray-600 mt-4 text-sm">
-            {currentIndex + 1} / {demoTestimonials.length}
-          </p>
         </div>
       </div>
     </section>

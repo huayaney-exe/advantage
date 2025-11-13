@@ -8,14 +8,14 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-gray-900" id="faq">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-zinc-950" id="faq">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Preguntas <span className="text-advantage-gold">Frecuentes</span>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            Preguntas <span className="text-[#F59E0B]">frecuentes</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Respuestas a las dudas más comunes de padres y estudiantes
+          <p className="text-xl text-gray-400">
+            Respuestas a las dudas más comunes
           </p>
         </div>
 
@@ -23,19 +23,19 @@ export default function FAQ() {
           {demoFAQs.map((faq, index) => (
             <div
               key={faq.id}
-              className="glass rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-colors"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-colors"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
               >
                 <span className="font-semibold text-lg pr-4">
                   {faq.question}
                 </span>
                 <motion.span
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-advantage-gold text-2xl flex-shrink-0"
+                  transition={{ duration: 0.2 }}
+                  className="text-[#F59E0B] text-2xl flex-shrink-0"
                 >
                   ↓
                 </motion.span>
@@ -47,7 +47,7 @@ export default function FAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
                     <div className="px-6 pb-5 text-gray-400 leading-relaxed">
@@ -58,16 +58,6 @@ export default function FAQ() {
               </AnimatePresence>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <p className="text-gray-500 mb-4">¿Tienes más preguntas?</p>
-          <a
-            href="#aplicar"
-            className="text-advantage-gold hover:underline font-medium"
-          >
-            Contáctanos directamente →
-          </a>
         </div>
       </div>
     </section>
