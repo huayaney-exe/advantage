@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Accordion } from '@/components/ui/Accordion'
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/Accordion'
 import { faqItems } from '@/lib/data/faq'
 
 export function FAQ() {
@@ -35,7 +35,18 @@ export function FAQ() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          <Accordion items={faqItems} />
+          <Accordion type="single" collapsible className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 overflow-hidden">
+            {faqItems.map((item, index) => (
+              <AccordionItem key={item.id} value={item.id} className={index === faqItems.length - 1 ? 'border-b-0' : ''}>
+                <AccordionTrigger className="px-6 text-lg text-midnight-600">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-6 text-base text-gray-700">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </motion.div>
 
         {/* Bottom CTA */}
