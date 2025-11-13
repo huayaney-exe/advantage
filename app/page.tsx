@@ -1,4 +1,5 @@
 import { Navigation } from '@/components/shared/Navigation'
+import { PromoBanner } from '@/components/shared/PromoBanner'
 import { Hero } from '@/components/landing/Hero'
 import { ProblemSolution } from '@/components/landing/ProblemSolution'
 import { TangibleOutcomes } from '@/components/landing/TangibleOutcomes'
@@ -15,6 +16,7 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen">
       <Navigation />
+      <PromoBanner />
       <Hero />
       <ProblemSolution />
       <TangibleOutcomes />
