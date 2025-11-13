@@ -33,7 +33,7 @@ export default function ApplicationForm() {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = async (data: ApplicationFormData) {
+  const onSubmit = async (data: ApplicationFormData) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     console.log("Form data:", data);
     setIsSubmitted(true);
