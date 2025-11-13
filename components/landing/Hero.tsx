@@ -23,7 +23,7 @@ export function Hero() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="absolute top-24 md:top-32 left-1/2 -translate-x-1/2 z-20"
+        className="absolute top-28 md:top-32 left-1/2 -translate-x-1/2 z-20"
       >
         <Badge variant="warning" className="text-sm md:text-base px-4 md:px-6 py-2 md:py-3 backdrop-blur-sm bg-sunrise-500/90 text-white shadow-xl">
           🎯 Solo 40 cupos | Cohort 1 | Cierre: 15 Feb 2026
@@ -31,7 +31,7 @@ export function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="container-custom relative z-10 pt-32 md:pt-20 pb-20">
+      <div className="container-custom relative z-10 pt-40 md:pt-20 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Text Content */}
           <motion.div
@@ -40,7 +40,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-white space-y-8"
           >
-            <h1 className="text-hero-mobile md:text-hero font-black leading-tight">
+            <h1 className="text-hero-mobile sm:text-[2.25rem] md:text-hero font-black leading-tight break-words">
               Tu hijo puede{' '}
               <span className="gradient-text bg-gradient-to-r from-coral-400 via-sunrise-400 to-emerald-400 bg-clip-text text-transparent">
                 liderar el futuro
@@ -54,9 +54,9 @@ export function Hero() {
             </p>
 
             {/* Trust Bar - Company Logos */}
-            <div className="flex flex-wrap items-center gap-6 py-4">
+            <div className="flex flex-wrap items-center gap-4 gap-y-3 py-4">
               <span className="text-sm text-gray-400 uppercase tracking-wide">Mentores de:</span>
-              <div className="flex flex-wrap items-center gap-4 md:gap-6">
+              <div className="flex flex-wrap items-center gap-4 gap-y-3 md:gap-6">
                 <div className="h-8 w-24 bg-white/10 rounded flex items-center justify-center text-white text-xs font-semibold backdrop-blur-sm">
                   Prisma
                 </div>

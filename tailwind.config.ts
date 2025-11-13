@@ -82,7 +82,7 @@ const config: Config = {
       },
       fontSize: {
         'hero': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '900' }],
-        'hero-mobile': ['2.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '900' }],
+        'hero-mobile': ['2rem', { lineHeight: '1.15', letterSpacing: '-0.02em', fontWeight: '900' }],
         'section': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
         'section-mobile': ['2rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
       },
