@@ -18,11 +18,18 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-midnight-600 via-midnight-700 to-midnight-900">
-      {/* Background Video/Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 opacity-20">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/advantagehero.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-900 via-midnight-900/50 to-transparent z-10" />
-        {/* Placeholder for video - replace with actual video */}
-        <div className="w-full h-full bg-[url('/images/hero-bg.jpg')] bg-cover bg-center" />
       </div>
 
       {/* Floating Badge */}
