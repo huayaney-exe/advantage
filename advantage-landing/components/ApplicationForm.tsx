@@ -19,7 +19,7 @@ const formSchema = z.object({
   motivacion: z.string().max(500, "Máximo 500 caracteres").optional(),
 });
 
-type FormData = z.infer<typeof formSchema>;
+type ApplicationFormData = z.infer<typeof formSchema>;
 
 export default function ApplicationForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -29,11 +29,11 @@ export default function ApplicationForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<FormData>({
+  } = useForm<ApplicationFormData>({
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = async (data: FormData) {
+  const onSubmit = async (data: ApplicationFormData) {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     console.log("Form data:", data);
     setIsSubmitted(true);
