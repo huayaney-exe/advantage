@@ -149,7 +149,7 @@ export function HowItWorks() {
                   } flex-col md:gap-8`}
                 >
                   {/* Content */}
-                  <div className={`flex-1 ${isEven ? 'md:text-right' : 'md:text-left'} ml-20 md:ml-0`}>
+                  <div className={`flex-1 ${isEven ? 'md:text-right' : 'md:text-left'} ml-24 md:ml-0`}>
                     <div className={`inline-block ${isEven ? 'md:float-right' : 'md:float-left'} max-w-md`}>
                       <Badge variant="default" className="mb-2">
                         Semana {item.week}
